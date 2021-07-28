@@ -1,0 +1,33 @@
+title 0.4: new note
+
+note over browser:
+borwser submits new note to server
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: HTML-code
+
+
+note over browser:
+browser reloads notes
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server--> browser: main.js
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server--> browser: [{ content: "hi", date: "2021-07-28T19:54:47.891Z"}, ...]
+
+
+browser->server: HTTP GET chrome-extension://cgaocdmhkmfnkdkbnckgmpopcbpaaejo/library/libraries.js
+server-->browser: libraries.js
+browser-> server: HTTP GET chrome-extension://cgaocdmhkmfnkdkbnckgmpopcbpaaejo/content_scripts/lib_detect.js
+server-->browser: lib_detect.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+server-->browser: favicon.ico
+
